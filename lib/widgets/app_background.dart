@@ -24,7 +24,13 @@ class AppBackground extends StatelessWidget {
             fit: BoxFit.contain,
           ),
         ),
-        child
+        Positioned(
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+          child: child,
+        )
       ],
     );
   }

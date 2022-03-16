@@ -22,18 +22,17 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        child: ListView(
+        child: Column(
           children: [
             Column(
               children: [
-                SizedBox(height: context.dynamicHeight(0.05)),
+                SizedBox(height: context.dynamicHeight(0.08)),
                 LinePlaneDraw(),
                 SizedBox(
                   width: context.dynamicWidth(.65),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: context.dynamicHeight(.02)),
                       Image.asset(
                         ImageDir.LOGO_SAIB,
                         width: double.infinity,
@@ -100,8 +99,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
-            SizedBox(height: context.dynamicHeight(0.12)),
-            iconsRowWidget(),
+            Expanded(
+                child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 24.0),
+                      child: iconsRowWidget(),
+                    ))),
           ],
         ),
       ),
@@ -114,17 +118,17 @@ class _LoginScreenState extends State<LoginScreen> {
       children: [
         IconButton(
           icon: Image.asset(ImageDir.IC_ABOUTUS),
-          iconSize: 40.0,
+          iconSize: context.dynamicHeight(0.04),
           onPressed: () => {},
         ),
         IconButton(
           icon: Image.asset(ImageDir.IC_LOCATOR),
-          iconSize: 40.0,
+          iconSize: context.dynamicHeight(0.04),
           onPressed: () => {},
         ),
         IconButton(
           icon: Image.asset(ImageDir.IC_PHONE),
-          iconSize: 40.0,
+          iconSize: context.dynamicHeight(0.04),
           onPressed: () => {},
         ),
       ],

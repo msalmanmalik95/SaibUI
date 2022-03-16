@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saibui/utils/styles/colors.dart';
+import 'package:saibui/utils/constant/context_extension.dart';
 
 class TextIconButton extends StatelessWidget {
   String labelText;
@@ -18,7 +19,7 @@ class TextIconButton extends StatelessWidget {
     return Column(
       children: [
         IconButton(
-          iconSize: 40.0,
+          iconSize: context.dynamicHeight(0.04),
           onPressed: () => onPressed,
           icon: Image.asset(path),
         ),
